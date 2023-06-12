@@ -2,7 +2,10 @@ package com.cebem.examen.controllers;
 
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Map;
+import java.sql.Timestamp;    
+import java.util.Date;    
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -32,6 +35,9 @@ public class QuejaController {
         QuejaModel nuevaQueja = new QuejaModel();
         nuevaQueja.name = name;
         nuevaQueja.text = text;
+        Date date = new Date();  
+        Timestamp ts=new Timestamp(date.getTime());  
+        nuevaQueja.createdAt = ts;
         quejaService.create(nuevaQueja);
 
         ArrayList<QuejaModel> quejas = quejaService.getAll();

@@ -1,5 +1,6 @@
 package com.cebem.examen.models;
 
+import java.sql.Timestamp;
 import java.util.Date;
 
 import jakarta.persistence.Column;
@@ -25,5 +26,5 @@ public class QuejaModel {
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-    public Date createdAt;
+    public Timestamp createdAt;
 }
